@@ -48,7 +48,7 @@ def test_authorization_with_email(browser_context_args, trace_file_cleaning, log
                               "Test login with invalid phone and correct password",
                               "Test login with valid phone and invalid password",
                               "Test login with invalid phone and invalid password",])
-def test_authorization_with_email(browser_context_args, trace_file_cleaning, phone, password):
+def test_authorization_with_phone(browser_context_args, trace_file_cleaning, phone, password):
     with allure.step("Open main page"):
         enter_the_login = AuthPage(browser_context_args)
         logger.info("Main page was opened successfully")
