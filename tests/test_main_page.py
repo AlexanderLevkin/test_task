@@ -40,7 +40,7 @@ def test_authorization_with_email(browser_context_args, trace_file_cleaning, log
 @allure.title('Test with Phone Field')
 @allure.label('owner', 'Levkin.A')
 @allure.severity(allure.severity_level.CRITICAL)
-@pytest.mark.parametrize("login, password", [(locators.phone, locators.password),
+@pytest.mark.parametrize("phone, password", [(locators.phone, locators.password),
                                              (locators.invalid_phone, locators.password),
                                              (locators.phone, locators.invalid_password),
                                              (locators.invalid_phone, locators.invalid_password)],
