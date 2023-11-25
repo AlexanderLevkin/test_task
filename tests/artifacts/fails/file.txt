@@ -1,0 +1,27 @@
+Error message: Locator expected to be visible
+Actual value: None 
+Call log:
+LocatorAssertions.to_be_visible with timeout 5000ms
+  - waiting for get_by_placeholder("¬ведите пароль")
+
+
+Stack trace:
+Traceback (most recent call last):
+  File "D:\PycharmProjects\test_task\pages\main_page.py", line 34, in check_transfer_to_the_password_page
+    expect(self.page.get_by_placeholder(locators.password_field)).to_be_visible()
+  File "C:\Users\Alexander\AppData\Local\pypoetry\Cache\virtualenvs\test-task-nzzjtfMm-py3.12\Lib\site-packages\playwright\sync_api\_generated.py", line 20808, in to_be_visible
+    self._sync(self._impl_obj.to_be_visible(visible=visible, timeout=timeout))
+  File "C:\Users\Alexander\AppData\Local\pypoetry\Cache\virtualenvs\test-task-nzzjtfMm-py3.12\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\Alexander\AppData\Local\pypoetry\Cache\virtualenvs\test-task-nzzjtfMm-py3.12\Lib\site-packages\playwright\_impl\_assertions.py", line 642, in to_be_visible
+    await self._expect_impl(
+  File "C:\Users\Alexander\AppData\Local\pypoetry\Cache\virtualenvs\test-task-nzzjtfMm-py3.12\Lib\site-packages\playwright\_impl\_assertions.py", line 68, in _expect_impl
+    raise AssertionError(
+AssertionError: Locator expected to be visible
+Actual value: None 
+Call log:
+LocatorAssertions.to_be_visible with timeout 5000ms
+  - waiting for get_by_placeholder("¬ведите пароль")
+
+ + 
