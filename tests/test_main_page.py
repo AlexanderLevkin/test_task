@@ -61,10 +61,10 @@ def test_authorization_with_phone(browser_context_args, trace_file_cleaning, pho
 
     if phone == locators.valid_phone:
 
-        with allure.step("Check Password is wrong"):
+        with allure.step("Check Entering with valid phone"):
             enter_the_phone.check_entering_with_valid_phone()
 
     elif phone == locators.invalid_phone:
 
-        with allure.step("Check Password is wrong"):
+        with allure.step("Check Entering with invalid phone"):
             enter_the_phone.check_with_invalid_phone()
