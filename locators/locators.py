@@ -11,7 +11,7 @@ site = "https://passport.yandex.ru/"
 # Locators
 valid_login = "example"
 valid_password = "12345678"  # Here should be the valid password (now this is fake)
-valid_phone = "+375(56)100-00-00"
+valid_phone = "+375(33)337-15-31"
 invalid_login, invalid_password, invalid_phone = (response_data[0]['email'], response_data[0]['website'],
                                                   response_data[0]['phone'])
 email_field = "Логин или email"
@@ -25,4 +25,4 @@ wrong_login_message = "Такой логин не подойдет"
 wrong_password_message = "Неверный пароль"
 wrong_phone_message = "Недопустимый формат номера"
 
-captcha_message = "Введите символы с картинки"
+sms_message = "Введите код"

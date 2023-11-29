@@ -47,11 +47,11 @@ def test_authorization_with_email(browser_context_args, trace_file_cleaning, log
 @allure.title('Test with Phone Field')
 @allure.label('owner', 'Levkin.A')
 @allure.severity(allure.severity_level.CRITICAL)
-@pytest.mark.parametrize("phone, password", [(locators.valid_phone, locators.valid_password),
-                                             (locators.valid_phone, locators.invalid_password)],
-                         ids=["Test login with valid phone and valid password",
-                              "Test login with valid phone and invalid password", ])
-def test_authorization_with_phone(browser_context_args, trace_file_cleaning, phone, password):
+@pytest.mark.parametrize("phone", [locators.valid_phone,
+                                   locators.invalid_phone],
+                         ids=["Test login with valid phone",
+                              "Test login with invalid phone", ])
+def test_authorization_with_phone(browser_context_args, trace_file_cleaning, phone):
     with allure.step("Open main page"):
         enter_the_phone = AuthPage(browser_context_args)
         logger.info("Main page was opened successfully")
@@ -59,20 +59,12 @@ def test_authorization_with_phone(browser_context_args, trace_file_cleaning, pho
     with allure.step("Enter Phone number"):
         enter_the_phone.phone_field(phone)
 
-    with allure.step("Check Phone field"):
-        enter_the_phone.check_phone_field()
-
-    if password == locators.valid_password:
-
-        with allure.step("Enter Password"):
-            enter_the_phone.phone_field(password)
+    if phone == locators.valid_phone:
 
         with allure.step("Check Password is wrong"):
-            enter_the_phone.check_captcha_field()
+            enter_the_phone.check_entering_with_valid_phone()
 
-    elif password == locators.invalid_login:
-        with allure.step("Enter Password"):
-            enter_the_phone.phone_field(password)
+    elif phone == locators.invalid_phone:
 
         with allure.step("Check Password is wrong"):
-            enter_the_phone.check_captcha_field()
+            enter_the_phone.check_with_invalid_phone()
