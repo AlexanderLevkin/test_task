@@ -34,3 +34,5 @@ def method_delete(url, body):
         result = requests.delete(url, json=body, headers=headers, cookies=cookie,
                                  verify=False)
         return result
+
+# w
