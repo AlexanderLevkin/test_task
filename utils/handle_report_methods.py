@@ -19,8 +19,11 @@ def attach_response_text(text, name):
 def handle_assertion_error(e):
     error_message = str(e)
     stack_trace = traceback.format_exc()
+    # Create the directories if they do not exist
+    dir_path = os.path.abspath(os.path.join(os.getcwd(), "artifacts/fails"))
+    os.makedirs(dir_path, exist_ok=True)
     # Write the error message and stack trace to a file
-    file_path = os.path.abspath(os.path.join(os.getcwd(), "artifacts/fails/file.txt"))
+    file_path = os.path.abspath(os.path.join(dir_path, "file.txt"))
     with open(file_path, 'w') as file:
         file.write(f"Error message: {error_message}\n\nStack trace:\n{stack_trace} + \n")
     # Attach the error message and stack trace to allure
